@@ -1,0 +1,12 @@
+---
+- name: Build Docker Compose File
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    num_services: 3
+  tasks:
+    - name: Build Docker Compose File
+      template:
+        src: ./docker-compose.j2
+        dest: ./docker-compose.yml
