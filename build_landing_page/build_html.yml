@@ -1,13 +1,12 @@
 ---
 - name: Build HTML
   hosts: all
-  connection: local
   gather_facts: no
+  become: yes
   vars:
-    num_services: 25
+    num_services: 10
   tasks:
     - name: Build HTML
-      run_once: true
       template:
-        src: index2.html.j2
-        dest: index.html
+        src: "{{ playbook_dir }}/index2.html.j2"
+        dest: /usr/share/nginx/html/index.html
