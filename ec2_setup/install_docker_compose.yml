@@ -1,0 +1,9 @@
+---
+- name: Install Docker Compose
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Install Docker Compose
+      pip:
+        name: 'docker-compose'

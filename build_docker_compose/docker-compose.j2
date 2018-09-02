@@ -1,0 +1,16 @@
+version: '3'
+services:
+{% for n in range(num_services) %}
+  web{{ n }}:
+    image: pxdlab:latest
+    ports:
+      - "888{{ n }}:8888"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 500M
+{% endfor %}

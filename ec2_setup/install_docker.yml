@@ -1,0 +1,21 @@
+---
+- name: Install Docker
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Upgrade All Packages
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Install Docker
+      yum:
+        name: 'docker'
+        state: latest
+
+    - name: Start Docker Service
+      raw: sudo service docker start
+
+    - name: Add User ec2-user To docker Group
+      raw: sudo usermod -a -G docker ec2-user

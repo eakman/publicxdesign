@@ -1,0 +1,13 @@
+---
+- name: Install NGINX
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Install NGINX
+      yum:
+        name: 'nginx'
+        state: latest
+
+    - name: Start NGINX
+      raw: sudo nginx

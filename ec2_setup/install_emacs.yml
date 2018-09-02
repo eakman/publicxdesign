@@ -1,0 +1,10 @@
+---
+- name: Install emacs
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Install emacs
+      yum:
+        name: 'emacs'
+        state: latest

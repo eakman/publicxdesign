@@ -1,0 +1,20 @@
+---
+- name: Build Docker Image
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Copy Dockerfile
+      copy:
+        src: "{{ playbook_dir }}/Dockerfile"
+        dest: /home/ec2-user/
+
+    - name: Copy jupyter_notebook_config.py
+      copy:
+        src: "{{ playbook_dir }}/jupyter_notebook_config.py"
+        dest: /home/ec2-user/
+
+    - name: Build Image
+      docker_image:
+         path: /home/ec2-user/
+         name: pxdlab

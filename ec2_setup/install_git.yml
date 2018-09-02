@@ -1,0 +1,10 @@
+---
+- name: Install Git
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Install Git
+      yum:
+        name: 'git'
+        state: latest

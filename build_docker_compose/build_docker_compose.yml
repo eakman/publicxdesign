@@ -1,12 +1,11 @@
 ---
 - name: Build Docker Compose File
-  hosts: localhost
-  connection: local
+  hosts: all
   gather_facts: no
   vars:
     num_services: 3
   tasks:
     - name: Build Docker Compose File
       template:
-        src: ./docker-compose.j2
-        dest: ./docker-compose.yml
+        src: "{{ playbook_dir }}/docker-compose.j2"
+        dest: /home/ec2-user/docker-compose.yml

@@ -1,0 +1,13 @@
+---
+- name: Build HTML
+  hosts: all
+  connection: local
+  gather_facts: no
+  vars:
+    num_services: 25
+  tasks:
+    - name: Build HTML
+      run_once: true
+      template:
+        src: index2.html.j2
+        dest: index.html
