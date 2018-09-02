@@ -1,0 +1,8 @@
+---
+- name: Leave Swarm
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Leave Swarm
+      shell: docker swarm leave --force

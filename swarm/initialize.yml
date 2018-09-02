@@ -1,0 +1,14 @@
+---
+- name: Initialize Swarm
+  hosts: leader
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Init Swarm
+      shell: docker swarm init --advertise-addr {{ inventory_hostname }}
+      register: output
+
+    - name: Validate Swarm
+      fail:
+        msg: Failed to initialize swarm
+      when: '"Swarm initialized" not in output.stdout'

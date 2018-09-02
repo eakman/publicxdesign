@@ -1,0 +1,14 @@
+---
+- name: Join Swarm As Manager
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Collect Join Token
+      shell: docker swarm join-token manager
+      register: join_token
+      delegate_to: "{{ groups['leader'][0] }}"
+
+    - name: Join Swarm
+      shell: "{{ join_token.stdout_lines[2].strip() }}"
+      when: inventory_hostname in groups["managers"]

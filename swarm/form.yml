@@ -1,0 +1,3 @@
+- import_playbook: initialize.yml
+- import_playbook: master_join.yml
+- import_playbook: worker_join.yml
