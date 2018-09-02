@@ -3,8 +3,6 @@
   hosts: all
   gather_facts: no
   become: yes
-  vars:
-    num_services: 10
   tasks:
     - name: Build HTML
       template:

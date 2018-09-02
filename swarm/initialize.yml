@@ -5,7 +5,7 @@
   become: yes
   tasks:
     - name: Init Swarm
-      shell: docker swarm init --advertise-addr {{ inventory_hostname }}
+      shell: docker swarm init --advertise-addr {{ private_ip }}
       register: output
 
     - name: Validate Swarm

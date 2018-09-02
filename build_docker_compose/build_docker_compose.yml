@@ -2,8 +2,6 @@
 - name: Build Docker Compose File
   hosts: all
   gather_facts: no
-  vars:
-    num_services: 3
   tasks:
     - name: Build Docker Compose File
       template:
