@@ -9,4 +9,5 @@
   - emacs
   - nginx
 4. Build image on servers
-5. 
+5.
+Â
