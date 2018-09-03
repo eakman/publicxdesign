@@ -6,5 +6,5 @@
   tasks:
     - name: Build HTML
       template:
-        src: "{{ playbook_dir }}/index2.html.j2"
+        src: "{{ playbook_dir }}/index.html.j2"
         dest: /usr/share/nginx/html/index.html

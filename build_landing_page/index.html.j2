@@ -19,13 +19,12 @@
         <p>In this hands on workshop we will analyze Detroit's housing demolition data using Jupyter notebooks and Python!</p>
       </div>
       <div class="list-group col-sm-7">
-        {% set counters = { "c": 0 } %}
-        {% for h in groups["all"] %}
+
         {% for i in range(num_services) %}
-          {{ counters.update({ "c": counters["c"] + 1 }) }}
-          <a target="_blank" href="{{ h }}:888{{ i }}" class="list-group-item"><strong>Student {{ counters["c"] }}</strong></a>
+
+          <a target="_blank" href="http://{{ inventory_hostname }}:{{ 8880 + i }}" class="list-group-item"><strong>Student {{ i }}</strong></a>
         {% endfor %}
-        {% endfor %}
+
       </div>
     </div>
   </body>
