@@ -8,9 +8,9 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.25'
-          memory: 1G
+          cpus: "{{ cpus }}"
+          memory: "{{ memory }}"
         reservations:
-          cpus: '0.25'
-          memory: 1G
+          cpus: "{{ cpus }}"
+          memory: "{{ memory }}"
 {% endfor %}
