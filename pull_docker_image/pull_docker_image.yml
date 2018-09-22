@@ -1,0 +1,9 @@
+---
+- name: Pull 'eakman/pxdlab'
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: pull an image
+      docker_image:
+        name: eakman/pxdlab
