@@ -2,7 +2,7 @@ version: '3'
 services:
 {% for n in range(num_services) %}
   web{{ n }}:
-    image: eakman/pxdlab
+    image: pxdlab
     ports:
       - "{{ 8880 + n }}:8888"
     deploy:
